@@ -35,8 +35,8 @@ col1.metric(label="Breakeven", value=((17500 - df['VALOR'].sum()) / breakeven).r
 
 col2.metric(label="Gas Profit", value=gas_profit)
 col2.metric(label="Gas Breakeven", value=(abs(gas_profit) / 200).round())
-col2.metric(label="Profitability Today", value=profitability_today)
-col2.metric(label="Profitability Breakeven", value=profitability_breakeven)
+col2.metric(label="% Profitability Today", value=profitability_today)
+col2.metric(label="% Profitability Breakeven", value=profitability_breakeven)
 
 ############# GRAPHS #########################
 st.write("""
