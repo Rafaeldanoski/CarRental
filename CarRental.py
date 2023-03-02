@@ -28,7 +28,7 @@ breakeven = (df['VALOR'].sum() / df['ANOMES'].nunique()).round(2)
 gas_profit = df_gas['VALOR'].sum().round(2) + (df['ANOMES'].nunique() * 200)
 profitability_today = (((df['VALOR'].sum().round(2) - 17500 - df_params['Quitação'].sum() + df_params['Venda'].sum()) / 17500) / df['ANOMES'].nunique()).round(4) * 100
 profitability_breakeven = ((((df_params['Venda'].sum() - ((48-(breakeven + df['ANOMES'].nunique())) * 619.78)) / 17500)) / (df['ANOMES'].nunique() + breakeven)).round(4) * 100
-new_profitability_breakeven = (((df_params['Venda'] + ((breakeven-(48-df['ANOMES'].nunique()))*619,78)) / 17500) - 1) / (breakeven+df['ANOMES'].nunique())
+new_profitability_breakeven = (((df_params['Venda'].sum() + ((breakeven-(48-df['ANOMES'].nunique()))*619,78)) / 17500) - 1) / (breakeven+df['ANOMES'].nunique())
 
 col1.metric(label="Profit", value=profit)
 col1.metric(label="Month Profit", value=(profit / df['ANOMES'].nunique()).round(2))
