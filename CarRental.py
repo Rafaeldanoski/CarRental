@@ -31,7 +31,7 @@ profitability_today = (((df['VALOR'].sum().round(2) - 17500 - df_params['Quitaç
 
 breakeven_months = ((17500 - df['VALOR'].sum()) / breakeven).round()
 months_to_go = 48-df['ANOMES'].nunique()
-profitability_breakeven = (((df_params['Venda'].sum() + ((breakeven_months - months_to_go)*619.78)) / 17500) - 1) / (breakeven_months+df['ANOMES'].nunique()) * 100
+profitability_breakeven = (((df_params['Venda'].sum() + ((breakeven_months - months_to_go)*619.78)) / 17500) - 1) / (breakeven_months+df['ANOMES'].nunique()).round(4) * 100
 
 col1.metric(label="Profit", value=profit)
 col1.metric(label="Month Profit", value=(profit / df['ANOMES'].nunique()).round(2))
